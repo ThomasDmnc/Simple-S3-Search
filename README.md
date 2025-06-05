@@ -6,4 +6,4 @@ AWS_ACCESS_KEY_ID
 AWS_SECRET_ACCESS_KEY
 ```
 
-And change the last lign `searchContentInS3('YourBucketName', 'TheContentToSearch')` before running the script with `npx ts-node s3search.ts`
+And then run the script with this command: `npx ts-node s3search.ts <your-bucket-name> <the-content-your-looking-for>`
