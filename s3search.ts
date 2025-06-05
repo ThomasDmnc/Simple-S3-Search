@@ -65,4 +65,13 @@ async function searchContentInS3(bucket: string, searchTerm: string, prefix?: st
   }
 }
 
-searchContentInS3('YourBucketName', 'TheContentToSearch')
+if (process.argv.length < 4) {
+  console.log('Usage: ts-node s3search.ts <bucket-name> <search-term> [prefix]');
+  process.exit(1);
+}
+
+const bucketName = process.argv[2];
+const searchTerm = process.argv[3];
+const prefix = process.argv[4];
+
+searchContentInS3(bucketName, searchTerm, prefix);
